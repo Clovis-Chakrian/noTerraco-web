@@ -1,0 +1,147 @@
+#container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+header {
+  width: 100vw;
+  height: 100px;
+  box-shadow: var(--default-shadow);
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
+  border-bottom: 1px var(--secondary-color) solid;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.logo {
+  width: 99px;
+  height: 99px;
+}
+
+.nav-bar {
+  font: 600 18px Space-Grotesk, sans-serif;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 1100px;
+  max-width: 1100px;
+}
+
+li:hover {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.icon {
+  display: none;
+}
+
+.icon-x {
+  display: none;
+}
+
+.content {
+  margin-top: 20px;
+  width: 100vw;
+  max-width: 1290px;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+footer {
+  width: 100vw;
+  height: 80px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  background-color: var(--background-color);
+}
+
+.wpp-logo {
+  margin: 0 20px;
+}
+
+@media(max-width: 1180px) {
+  header {
+    flex-direction: column;
+    justify-content: flex-start;
+    transition-duration: 500ms;
+  }
+
+  header.open {
+    height: 295px;
+  }
+
+  .icon {
+    display: flex;
+    width: 95vw;
+    position: absolute;
+    justify-content: flex-end;
+    transition-duration: 200ms;
+    opacity: 1;
+  }
+
+  .icon.icon-open {
+    opacity: 0;
+  }
+
+  .icon-x {
+    display: flex; 
+    width: 95vw;
+    position: absolute;
+    justify-content: flex-end;
+    opacity: 0;
+    transition-duration: 200ms;  
+  }
+
+  .icon-x.icon-open {
+    opacity: 1;
+  }
+
+  .header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    width: 100vw;
+    max-width: 1180px;
+    display: hidden;
+    opacity: 0;
+    transition-duration: 100ms;
+  }
+
+  .nav-bar.open {
+    display: flex;
+    opacity: 1;
+    transition-duration: 1000ms;
+  }
+
+  .nav-bar li {
+    margin-bottom: 10px;
+  }
+}
+
+@media(max-width: 430px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden;
+  }
+}

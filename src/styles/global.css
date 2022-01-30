@@ -1,0 +1,84 @@
+:root {
+  --primary-color: #3C2665;
+  --background-color: #FFF;
+  --secondary-color: #00A284;
+  --text-color: #1A102C;
+  --default-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00a284b2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+body, input, button, textarea {
+  font: 400 20px Space-Grotesk, sans-serif;
+}
+
+.subtitle {
+  font: 600 20px Space-Grotesk, sans-serif;
+  color: var(--primary-color);
+  width: 100vw;
+  max-width: 1100px;
+  border-bottom: 2px solid var(--secondary-color);
+  text-align: center;
+}
+
+.label {
+  font: 600 16px Space-Grotesk, sans-serif;
+  color: var(--text-color);
+  padding: 0 5px;
+}
+
+.description {
+  font: 400 14px Space-Grotesk, sans-serif;
+  color: var(--text-color);
+  padding: 0 5px;
+  line-height: 1.5;
+}
+
+.price {
+  font: 600 16px Space-Grotesk, sans-serif;
+  color: var(--secondary-color);
+  padding: 0 5px;
+}
+
+@media(max-width: 1024px) {
+  .subtitle {
+    font: 600 20px Space-Grotesk, sans-serif;
+    color: var(--primary-color);
+    width: 100vw;
+    margin-left: 15px;
+    max-width: 1100px;
+    text-align: left;
+  }
+}
