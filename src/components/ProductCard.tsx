@@ -27,7 +27,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
       <div className="product-info">
         <p className='label'>{productName}</p>
         <p className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat felis metus, quis elementum libero iaculis ac. Curabitur vestibulum facilisis purus. Vestibulum et volutpat mi
+          {description}
         </p>
         <div className="price-div">
           <div>
