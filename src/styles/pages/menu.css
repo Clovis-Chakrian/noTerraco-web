@@ -50,13 +50,19 @@ li:hover {
 
 .content {
   margin-top: 20px;
-  width: 100vw;
+  width: 80vw;
+  min-height: 70vh;
   max-width: 1290px;
   align-self: center;
+  align-content: flex-start;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.content.start {
+  justify-content: flex-start;
 }
 
 footer {
@@ -68,6 +74,7 @@ footer {
   align-items: center;
   padding: 0 10px;
   background-color: var(--background-color);
+  align-self: flex-end;
 }
 
 .wpp-logo {
@@ -82,7 +89,7 @@ footer {
   }
 
   header.open {
-    height: 295px;
+    height: 325px;
   }
 
   .icon {
@@ -135,6 +142,10 @@ footer {
   .nav-bar li {
     margin-bottom: 10px;
   }
+
+  .content {
+    width: 100vw
+  }
 }
 
 @media(max-width: 430px) {
@@ -143,5 +154,6 @@ footer {
     align-items: center;
     justify-content: flex-start;
     overflow-x: hidden;
+    width: 100vw;
   }
 }

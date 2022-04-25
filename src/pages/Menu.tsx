@@ -6,6 +6,7 @@ import { IoRestaurant, IoLogoWhatsapp, IoLogoInstagram, IoLogoFacebook } from 'r
 import { IoIosRestaurant } from 'react-icons/io';
 import { useEffect, useState } from 'react';
 import api from '../services/api'
+import ExtraPortionCard from '../components/ExtraPortionCard';
 
 interface IMenu {
   id: number,
@@ -19,7 +20,7 @@ interface IMenu {
 }
 
 function Menu() {
-  const types = ['Entradinhas', 'Saladas, Vegetarianos & Veganos', 'Principais', 'Bebidas', 'Sobremesas', 'Porções extras'];
+  const types = ['Entradinhas', 'Saladas, Vegetarianos & Veganos', 'Principais', 'Bebidas', 'Sobremesas', 'Porções extras', "Pets"];
   const [productType, setProductType] = useState('Entradinhas');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [menu, setMenu] = useState([]);
@@ -71,29 +72,39 @@ function Menu() {
           })}
         </ul>
       </header>
-      <div className={`content ${isOpen ? 'open' : ''}`}>
+      <div className={`content ${isOpen ? 'open' : ''} ${productType === 'Porções extras' ? 'start' : ''}`}>
         <p className='subtitle'>
           {productType}
         </p>
+
         {menu.map((item: IMenu) => {
           return (
-            <ProductCard
-              key={item.id}
-              productName={item.name}
-              imageUrl={item.imageUrl}
-              description={item.description}
-              price={item.price}
-              priceForTwo={item.priceForTwo}
-              availability={item.availability}
-            />
-          );
+            productType !== 'Porções extras'
+              ?
+              <ProductCard
+                key={item.id}
+                productName={item.name}
+                imageUrl={item.imageUrl}
+                description={item.description}
+                price={item.price}
+                priceForTwo={item.priceForTwo}
+                availability={item.availability}
+                productType={item.type}
+              />
+              :
+              <ExtraPortionCard
+                name={item.name}
+                price={item.price}
+                availability={item.availability}
+              />
+          )
         })}
       </div>
       <footer>
         <a target="_blank" href={'https://www.instagram.com/noterracorestaurante/'} rel="noreferrer">
           <IoLogoInstagram style={{ fill: '#00A284' }} size={36} />
         </a>
-        <a className='wpp-logo' target="_blank" href={'https://api.whatsapp.com/send?phone=5581985444683&text=Olá, gostaria de fazer um pedido'} rel="noreferrer">
+        <a className='wpp-logo' target="_blank" href={'https://api.whatsapp.com/send?phone=5581998469403&text=Olá, gostaria de fazer um pedido'} rel="noreferrer">
           <IoLogoWhatsapp style={{ fill: '#00A284' }} size={36} />
         </a>
         <a target="_blank" href={'https://www.facebook.com/noterracorestaurante/'} rel="noreferrer">

@@ -1,0 +1,15 @@
+.extra-portion-card {
+  display: flex;
+  width: 25vw;
+  max-height: 25px;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+@media(max-width: 430px) {
+  .extra-portion-card {
+    width: 80vw;
+  }
+}

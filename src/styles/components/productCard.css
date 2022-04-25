@@ -2,12 +2,13 @@
   width: 245px;
   height: 440px;
   background-color: var(--background-color);
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 10px;
   box-shadow: var(--default-shadow);
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 .img-container {
@@ -41,6 +42,7 @@
     width: 95vw;
     height: 180px;
     flex-direction: row;
+    margin-bottom: 5px;
   }
 
   .img-container {

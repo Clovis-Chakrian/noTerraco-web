@@ -1,5 +1,4 @@
 import '../styles/components/productCard.css';
-import exp from '../images/eramosQuatro.jpg';
 import { IoPersonSharp, IoPeopleSharp } from 'react-icons/io5';
 
 interface IProductCardProps {
@@ -9,6 +8,7 @@ interface IProductCardProps {
   price: number,
   availability: boolean,
   priceForTwo: number,
+  productType: string
 }
 
 const ProductCard: React.FC<IProductCardProps> = ({
@@ -18,6 +18,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
   price,
   availability,
   priceForTwo,
+  productType
 }) => {
   return (
     <div className='card' style={{ display: availability ? 'flex' : 'none' }}>
@@ -30,18 +31,18 @@ const ProductCard: React.FC<IProductCardProps> = ({
           {description}
         </p>
         <div className="price-div">
-          <div>
+          <div style={{ display: productType === 'Entradinhas' ? 'none' : 'flex' }}>
             <IoPersonSharp style={{ fill: '#00A284' }} />
           </div>
 
           <p className="price">
             R${price}
           </p>
-          <div>
+          <div style={{ display: productType === 'Entradinhas' ? 'none' : 'flex' }}>
             <IoPeopleSharp style={{ fill: '#00A284' }} />
           </div>
 
-          <p className="price">R${priceForTwo}</p>
+          <p style={{ display: productType === 'Entradinhas' ? 'none' : 'flex' }} className="price">R${priceForTwo}</p>
         </div>
       </div>
     </div>
