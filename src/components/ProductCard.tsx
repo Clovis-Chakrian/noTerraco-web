@@ -9,6 +9,7 @@ interface IProductCardProps {
   availability: boolean,
   priceForTwo: number,
   productType: string
+  show?: boolean
 }
 
 const ProductCard: React.FC<IProductCardProps> = ({
@@ -18,10 +19,11 @@ const ProductCard: React.FC<IProductCardProps> = ({
   price,
   availability,
   priceForTwo,
-  productType
+  productType,
+  show
 }) => {
   return (
-    <div className='card' style={{ display: availability ? 'flex' : 'none' }}>
+    <div className='card' style={{ display: availability && show ? 'flex' : 'none' }}>
       <div className="img-container">
         <img className='img' src={imageUrl} alt={productName} />
       </div>
@@ -31,18 +33,18 @@ const ProductCard: React.FC<IProductCardProps> = ({
           {description}
         </p>
         <div className="price-div">
-          <div style={{ display: productType === 'Entradinhas' ? 'none' : 'flex' }}>
+          <div style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina') ? 'none' : 'flex' }}>
             <IoPersonSharp style={{ fill: '#00A284' }} />
           </div>
 
           <p className="price">
             R${price}
           </p>
-          <div style={{ display: productType === 'Entradinhas' ? 'none' : 'flex' }}>
+          <div style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina') ? 'none' : 'flex' }}>
             <IoPeopleSharp style={{ fill: '#00A284' }} />
           </div>
 
-          <p style={{ display: productType === 'Entradinhas' ? 'none' : 'flex' }} className="price">R${priceForTwo}</p>
+          <p style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina')  ? 'none' : 'flex' }} className="price">R${priceForTwo}</p>
         </div>
       </div>
     </div>

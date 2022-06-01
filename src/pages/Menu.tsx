@@ -12,6 +12,7 @@ interface IMenu {
   id: number,
   name: string,
   type: string,
+  subtype: string,
   description: string,
   imageUrl: string,
   price: number,
@@ -20,7 +21,7 @@ interface IMenu {
 }
 
 function Menu() {
-  const types = ['Entradinhas', 'Saladas, Vegetarianos & Veganos', 'Principais', 'Bebidas', 'Sobremesas', 'Porções extras', "Pets"];
+  const types = ['Entradinhas', 'Saladas, vegetarianos & veganos', 'Principais', 'Bebidas', 'Sobremesas', 'Porções extras', "Pets"];
   const [productType, setProductType] = useState('Entradinhas');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [menu, setMenu] = useState([]);
@@ -77,26 +78,117 @@ function Menu() {
           {productType}
         </p>
 
+        {productType === 'Bebidas' ?
+          <div className='drinks-div'>
+            <h4>Bebidas não alcoólicas</h4>
+            <div className='content margin-off'>
+              {menu.map((item: IMenu) => {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    productName={item.name}
+                    imageUrl={item.imageUrl}
+                    description={item.description}
+                    price={item.price}
+                    priceForTwo={item.priceForTwo}
+                    availability={item.availability}
+                    productType={item.type}
+                    show={item.subtype == 'Sem álcool' ? true : false}
+                  />
+                )
+              })}
+            </div>
+
+            <h4>Cervejas</h4>
+            <div className='content margin-off'>
+              {menu.map((item: IMenu) => {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    productName={item.name}
+                    imageUrl={item.imageUrl}
+                    description={item.description}
+                    price={item.price}
+                    priceForTwo={item.priceForTwo}
+                    availability={item.availability}
+                    productType={item.type}
+                    show={item.subtype == 'Cervejas' ? true : false}
+                  />
+                )
+              })}
+            </div>
+
+            <h4>Whiskies</h4>
+            <div className='content margin-off'>
+              {menu.map((item: IMenu) => {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    productName={item.name}
+                    imageUrl={item.imageUrl}
+                    description={item.description}
+                    price={item.price}
+                    priceForTwo={item.priceForTwo}
+                    availability={item.availability}
+                    productType={item.type}
+                    show={item.subtype == 'Whiskies' ? true : false}
+                  />
+                )
+              })}
+            </div>
+
+            <h4>Outras bebidas</h4>
+            <div className='content margin-off'>
+              {menu.map((item: IMenu) => {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    productName={item.name}
+                    imageUrl={item.imageUrl}
+                    description={item.description}
+                    price={item.price}
+                    priceForTwo={item.priceForTwo}
+                    availability={item.availability}
+                    productType={item.type}
+                    show={item.subtype == 'Outras bebidas' ? true : false}
+                  />
+                )
+              })}
+            </div>
+          </div>
+          :
+          <></>
+        }
+
         {menu.map((item: IMenu) => {
           return (
-            productType !== 'Porções extras'
+            productType !== 'Porções extras' && productType !== 'Pets'
               ?
-              <ProductCard
-                key={item.id}
-                productName={item.name}
-                imageUrl={item.imageUrl}
-                description={item.description}
-                price={item.price}
-                priceForTwo={item.priceForTwo}
-                availability={item.availability}
-                productType={item.type}
-              />
+              productType === 'Bebidas' ?
+                <></>
+                :
+                <ProductCard
+                  key={item.id}
+                  productName={item.name}
+                  imageUrl={item.imageUrl}
+                  description={item.description}
+                  price={item.price}
+                  priceForTwo={item.priceForTwo}
+                  availability={item.availability}
+                  productType={item.type}
+                  show={true}
+                />
               :
-              <ExtraPortionCard
-                name={item.name}
-                price={item.price}
-                availability={item.availability}
-              />
+              <>
+                <div>
+                  <ExtraPortionCard
+                    name={item.name}
+                    price={item.price}
+                    availability={item.availability}
+                  />
+                  <p className='label' style={{ color: '#3C2665', display: productType === 'Pets' ? 'flex' : 'none', width: 220, marginTop: 4 }}>{item.description}</p>
+                </div>
+              </>
           )
         })}
       </div>
