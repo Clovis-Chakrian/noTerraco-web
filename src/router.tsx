@@ -6,7 +6,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Menu />} />
+        <Route path='/' element={<Home />} />
         <Route path='/menu' element={<Menu />} />
       </Routes>
     </BrowserRouter>
