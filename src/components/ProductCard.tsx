@@ -33,18 +33,18 @@ const ProductCard: React.FC<IProductCardProps> = ({
           {description}
         </p>
         <div className="price-div">
-          <div style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina') ? 'none' : 'flex' }}>
+          <div style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina') || (productType === 'Principais' && productName.includes('Especial')) ? 'none' : 'flex' }}>
             <IoPersonSharp style={{ fill: '#00A284' }} />
           </div>
 
           <p className="price">
             R${price}
           </p>
-          <div style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina') ? 'none' : 'flex' }}>
+          <div style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina') || (productType === 'Principais' && productName === 'Paella nordestina') || (productType === 'Principais' && productName.includes('Especial')) ? 'none' : 'flex' }}>
             <IoPeopleSharp style={{ fill: '#00A284' }} />
           </div>
 
-          <p style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina')  ? 'none' : 'flex' }} className="price">R${priceForTwo}</p>
+          <p style={{ display: (productType !== 'Principais') || (productType === 'Principais' && productName === 'Paella nordestina') || (productType === 'Principais' && productName === 'Paella nordestina') || (productType === 'Principais' && productName.includes('Especial'))  ? 'none' : 'flex' }} className="price">R${priceForTwo}</p>
         </div>
       </div>
     </div>
