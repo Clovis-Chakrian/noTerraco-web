@@ -156,15 +156,58 @@ function Menu() {
               })}
             </div>
           </div>
-          :
-          <></>
+          : productType === 'Principais' ?
+            <div>
+              {/*<h4>{Date().includes('Sun') || Date().includes('Sat') ? 'Especial do fim de semana' : 'Executivo'}</h4>*/}
+
+              
+
+              {/*<h4>Outros pratos principais</h4>*/}
+              <div className='content margin-off'>
+              {menu.map((item: IMenu) => {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    productName={item.name}
+                    imageUrl={item.imageUrl}
+                    description={item.description}
+                    price={item.price}
+                    priceForTwo={item.priceForTwo}
+                    availability={item.availability}
+                    productType={item.type}
+                    show={!item.name.includes('Especial') ? false : true}
+                  />
+                )
+              })}
+
+                {menu.map((item: IMenu) => {
+                  return (
+                    <ProductCard
+                      key={item.id}
+                      productName={item.name}
+                      imageUrl={item.imageUrl}
+                      description={item.description}
+                      price={item.price}
+                      priceForTwo={item.priceForTwo}
+                      availability={item.availability}
+                      productType={item.type}
+                      show={item.name.includes('Especial') ? false : true}
+                    />
+                  )
+                })}
+              </div>
+
+
+            </div>
+            :
+            <></>
         }
 
         {menu.map((item: IMenu) => {
           return (
             productType !== 'Porções extras' && productType !== 'Pets'
               ?
-              productType === 'Bebidas' ?
+              productType === 'Bebidas' || productType === 'Principais' ?
                 <></>
                 :
                 <ProductCard
