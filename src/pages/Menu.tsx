@@ -175,7 +175,7 @@ function Menu() {
                     priceForTwo={item.priceForTwo}
                     availability={item.availability}
                     productType={item.type}
-                    show={!item.name.includes('Especial') ? false : true}
+                    show={!item.name.includes('Especial') || !item.name.includes('Executivo') ? false : true}
                   />
                 )
               })}
@@ -191,7 +191,7 @@ function Menu() {
                       priceForTwo={item.priceForTwo}
                       availability={item.availability}
                       productType={item.type}
-                      show={item.name.includes('Especial') ? false : true}
+                      show={item.name.includes('Especial') || item.name.includes('Executivo') ? false : true}
                     />
                   )
                 })}
