@@ -13,7 +13,6 @@ const DishesCard = () => {
         <p className='description'>Descrição</p>
         <div className='main-dishes-price-div'>
           <p className='price'>Preço para um</p>
-          <p className='price'>Preço para dois</p>
         </div>
       </div>
     </div>
