@@ -93,7 +93,7 @@ function Menu() {
                     priceForTwo={item.priceForTwo}
                     availability={item.availability}
                     productType={item.type}
-                    show={item.subtype == 'Sem álcool' ? true : false}
+                    show={item.subtype === 'Sem álcool' ? true : false}
                   />
                 )
               })}
@@ -112,7 +112,7 @@ function Menu() {
                     priceForTwo={item.priceForTwo}
                     availability={item.availability}
                     productType={item.type}
-                    show={item.subtype == 'Cervejas' ? true : false}
+                    show={item.subtype === 'Cervejas' ? true : false}
                   />
                 )
               })}
@@ -131,7 +131,7 @@ function Menu() {
                     priceForTwo={item.priceForTwo}
                     availability={item.availability}
                     productType={item.type}
-                    show={item.subtype == 'Whiskies' ? true : false}
+                    show={item.subtype === 'Whiskies' ? true : false}
                   />
                 )
               })}
@@ -150,7 +150,7 @@ function Menu() {
                     priceForTwo={item.priceForTwo}
                     availability={item.availability}
                     productType={item.type}
-                    show={item.subtype == 'Outras bebidas' ? true : false}
+                    show={item.subtype === 'Outras bebidas' ? true : false}
                   />
                 )
               })}
@@ -175,26 +175,27 @@ function Menu() {
                     priceForTwo={item.priceForTwo}
                     availability={item.availability}
                     productType={item.type}
-                    show={!item.name.includes('Especial') || !item.name.includes('Executivo') ? false : true}
+                    show={item.name.includes('Especial') || item.name.includes('Executivo') ? true : false}
                   />
                 )
               })}
 
-                {menu.map((item: IMenu) => {
-                  return (
-                    <ProductCard
-                      key={item.id}
-                      productName={item.name}
-                      imageUrl={item.imageUrl}
-                      description={item.description}
-                      price={item.price}
-                      priceForTwo={item.priceForTwo}
-                      availability={item.availability}
-                      productType={item.type}
-                      show={item.name.includes('Especial') || item.name.includes('Executivo') ? false : true}
-                    />
-                  )
-                })}
+              {menu.map((item: IMenu) => {
+                console.log(item)
+                return (
+                  <ProductCard
+                    key={item.id}
+                    productName={item.name}
+                    imageUrl={item.imageUrl}
+                    description={item.description}
+                    price={item.price}
+                    priceForTwo={item.priceForTwo}
+                    availability={item.availability}
+                    productType={item.type}
+                    show={item.name.includes('Especial') || item.name.includes('Executivo') ? false : true}
+                  />
+                )
+              })}
               </div>
 
 
