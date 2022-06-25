@@ -58,7 +58,10 @@ function Menu() {
             <img className='logo' src={logo} alt="logo do Terraço" />
           </h1>
           <div className={`icon ${isOpen ? 'icon-open' : ''}`}>
-            <IoIosRestaurant size={32} onClick={() => setIsOpen(!isOpen)} style={{ fill: '#00A284' }} />
+            <div>
+              <IoIosRestaurant size={32} onClick={() => setIsOpen(!isOpen)} style={{ fill: '#00A284' }} />
+              <p style={{ fontSize: 12, color: '#00A284', fontWeight: 'bold' }}>Menu</p>
+            </div>
           </div>
           <div className={`icon-x ${isOpen ? 'icon-open' : ''}`}>
             <IoRestaurant size={32} onClick={() => setIsOpen(!isOpen)} style={{ fill: '#00A284' }} />
