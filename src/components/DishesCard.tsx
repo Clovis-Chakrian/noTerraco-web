@@ -1,18 +1,24 @@
 import ImageExample from '../images/eramosQuatro.jpg';
 import '../styles/components/mainDishesCard.css'
+import { IDishes } from '../@types/products';
 
-const DishesCard = () => {
+const DishesCard: React.FC<IDishes> = ({
+  name,
+  description,
+  imageURL,
+  price,
+}) => {
   return (
     <div className='main-dishes-card'>
       <div className='main-dishes-image-container'>
-        <img src={ImageExample} alt="imagem do prato" className='main-dishes-image' />
+        <img src={imageURL} alt="imagem do prato" className='main-dishes-image' />
       </div>
 
       <div className='main-dishes-content'>
-        <p className='label'>Nome do prato</p>
-        <p className='description'>Descrição</p>
+        <p className='label'>{name}</p>
+        <p className='description'>{description}</p>
         <div className='main-dishes-price-div'>
-          <p className='price'>Preço para um</p>
+          <p className='price'>R${price}</p>
         </div>
       </div>
     </div>
