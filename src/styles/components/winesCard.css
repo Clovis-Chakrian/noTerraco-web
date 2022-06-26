@@ -1,6 +1,6 @@
 .wines-card {
   width: 245px;
-  height: 440px;
+  height: 340px;
   background-color: var(--background-color);
   margin-right: 10px;
   border-radius: 10px;
@@ -25,9 +25,11 @@
 
 .wines-price-div {
   width: 245px;
+  height: 85px;
   display: flex;
   justify-content: space-evenly;
   align-self: flex-end;
+  align-items: center;
 }
 
 @media (max-width: 430px) {
