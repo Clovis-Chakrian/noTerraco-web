@@ -7,9 +7,11 @@ const WineCard: React.FC<IWine> = ({
   glassPrice,
   imageURL,
   name,
+  availability,
+  show
 }) => {
   return (
-    <div className='wines-card'>
+    <div className='wines-card' style={{ display: availability && show ? 'flex' : 'none' }}>
       <div className='wines-image-container'>
         <img src={imageURL} alt={name} className='wines-image' />
       </div>

@@ -7,6 +7,8 @@ import { IoIosRestaurant } from 'react-icons/io';
 import { useEffect, useState } from 'react';
 import api from '../services/api'
 import ExtraPortionCard from '../components/ExtraPortionCard';
+import { IWine } from '../@types/products';
+import WineCard from '../components/WinesCard';
 
 interface IMenu {
   id: number,
@@ -21,24 +23,34 @@ interface IMenu {
 }
 
 function Menu() {
-  const types = ['Entradinhas', 'Saladas, vegetarianos & veganos', 'Principais', 'Bebidas', 'Sobremesas', 'Porções extras', "Pets"];
+  const types = ['Entradinhas', 'Saladas, vegetarianos & veganos', 'Principais', 'Bebidas', 'Sobremesas', 'Porções extras', "Pets", "Vinhos"];
   const [productType, setProductType] = useState('Entradinhas');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [menu, setMenu] = useState([]);
 
   async function loadMenu() {
-    await api.get('/products', {
-      params: {
-        type: productType,
-        name: ''
-      }
-    }).then(res => {
-      setMenu(res.data);
-      console.log(menu);
-    }).catch(err => {
-      console.log(err);
-      alert('Houve um erro ao buscar o cardápio. Por favor recarregue a página');
-    });
+    if (productType === 'Vinhos') {
+      await api.get('/wines').then(res => {
+        setMenu(res.data);
+        console.log(menu);
+      }).catch(err => {
+        console.log(err);
+        alert('Houve um erro ao buscar o cardápio. Por favor recarregue a página');
+      })
+    } else {
+      await api.get('/products', {
+        params: {
+          type: productType,
+          name: ''
+        }
+      }).then(res => {
+        setMenu(res.data);
+        console.log(menu);
+      }).catch(err => {
+        console.log(err);
+        alert('Houve um erro ao buscar o cardápio. Por favor recarregue a página');
+      });
+    };
   };
 
   useEffect(() => {
@@ -163,46 +175,100 @@ function Menu() {
             <div>
               {/*<h4>{Date().includes('Sun') || Date().includes('Sat') ? 'Especial do fim de semana' : 'Executivo'}</h4>*/}
 
-              
+
 
               {/*<h4>Outros pratos principais</h4>*/}
               <div className='content margin-off'>
-              {menu.map((item: IMenu) => {
-                return (
-                  <ProductCard
-                    key={item.id}
-                    productName={item.name}
-                    imageUrl={item.imageUrl}
-                    description={item.description}
-                    price={item.price}
-                    priceForTwo={item.priceForTwo}
-                    availability={item.availability}
-                    productType={item.type}
-                    show={item.name.includes('Especial') || item.name.includes('Executivo') ? true : false}
-                  />
-                )
-              })}
+                {menu.map((item: IMenu) => {
+                  return (
+                    <ProductCard
+                      key={item.id}
+                      productName={item.name}
+                      imageUrl={item.imageUrl}
+                      description={item.description}
+                      price={item.price}
+                      priceForTwo={item.priceForTwo}
+                      availability={item.availability}
+                      productType={item.type}
+                      show={item.name.includes('Especial') || item.name.includes('Executivo') ? true : false}
+                    />
+                  )
+                })}
 
-              {menu.map((item: IMenu) => {
-                console.log(item)
-                return (
-                  <ProductCard
-                    key={item.id}
-                    productName={item.name}
-                    imageUrl={item.imageUrl}
-                    description={item.description}
-                    price={item.price}
-                    priceForTwo={item.priceForTwo}
-                    availability={item.availability}
-                    productType={item.type}
-                    show={item.name.includes('Especial') || item.name.includes('Executivo') ? false : true}
-                  />
-                )
-              })}
+                {menu.map((item: IMenu) => {
+                  console.log(item)
+                  return (
+                    <ProductCard
+                      key={item.id}
+                      productName={item.name}
+                      imageUrl={item.imageUrl}
+                      description={item.description}
+                      price={item.price}
+                      priceForTwo={item.priceForTwo}
+                      availability={item.availability}
+                      productType={item.type}
+                      show={item.name.includes('Especial') || item.name.includes('Executivo') ? false : true}
+                    />
+                  )
+                })}
               </div>
 
 
             </div>
+            : productType === 'Vinhos' ? 
+              <div className="drinks-div">
+                <h4>Chile</h4>
+                <div className="content margin-off">
+                  {menu.map((item: IWine) => {
+                    return (
+                      <WineCard
+                      key={item.id}
+                      availability={item.availability}
+                      bottlePrice={item.bottlePrice}
+                      glassPrice={item.glassPrice}
+                      imageURL={item.imageURL}
+                      name={item.name}
+                      country={item.country}
+                      show={item.country === 'Chile' ? true : false}
+                      />
+                    )
+                  })}
+                </div>
+                <h4>Itália</h4>
+                <div className="content margin-off">
+                  {menu.map((item: IWine) => {
+                    return (
+                      <WineCard
+                      key={item.id}
+                      availability={item.availability}
+                      bottlePrice={item.bottlePrice}
+                      glassPrice={item.glassPrice}
+                      imageURL={item.imageURL}
+                      name={item.name}
+                      country={item.country}
+                      show={item.country === 'Itália' ? true : false}
+                      />
+                    )
+                  })}
+                </div>
+                <h4>Portugal</h4>
+                <div className="content margin-off">
+                  {menu.map((item: IWine) => {
+                    return (
+                      <WineCard
+                      key={item.id}
+                      availability={item.availability}
+                      bottlePrice={item.bottlePrice}
+                      glassPrice={item.glassPrice}
+                      imageURL={item.imageURL}
+                      name={item.name}
+                      country={item.country}
+                      show={item.country === 'Portugal' ? true : false}
+                      />
+                    )
+                  })}
+                </div>
+              </div>
             :
             <></>
         }
@@ -211,7 +277,7 @@ function Menu() {
           return (
             productType !== 'Porções extras' && productType !== 'Pets'
               ?
-              productType === 'Bebidas' || productType === 'Principais' ?
+              productType === 'Bebidas' || productType === 'Principais' || productType === 'Vinhos' ?
                 <></>
                 :
                 <ProductCard

@@ -36,5 +36,7 @@ export interface IWine {
   imageURL: string,
   name: string,
   glassPrice: Number,
-  bottlePrice: Number
+  bottlePrice: Number,
+  availability: boolean,
+  show?: boolean
 }

@@ -107,6 +107,7 @@ export const Wines = () => {
       glassPrice={26}
       imageURL="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
       name="Osadia"
+      availability
     />
   );
 }
