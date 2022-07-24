@@ -1,14 +1,19 @@
+import { IPets } from '../@types/products';
 import '../styles/components/extraPortionCard.css';
 
-const PetsCard = () => {
+const PetsCard: React.FC<IPets> = ({
+  description,
+  name,
+  price
+}) => {
   return(
     <div className="extra-portion-card">
       <div className="pets-content">
-        <p className="label">Nome</p>
-        <p className="description">Descrição</p>
+        <p className="label">{name}</p>
+        <p className="description">{description}</p>
       </div>
 
-      <p className="price">Preço</p>
+      <p className="price">R${price}</p>
     </div>
   );
 };

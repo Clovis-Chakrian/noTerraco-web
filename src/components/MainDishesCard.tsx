@@ -1,19 +1,28 @@
-import ImageExample from '../images/eramosQuatro.jpg';
+import { IMainDishes } from '../@types/products';
+import { IoPersonSharp, IoPeopleSharp } from 'react-icons/io5';
 import '../styles/components/mainDishesCard.css'
 
-const MainDishesCard = () => {
+const MainDishesCard: React.FC<IMainDishes> = ({
+  description,
+  imageURL,
+  name,
+  price,
+  priceForTwo
+}) => {
   return (
     <div className='main-dishes-card'>
       <div className='main-dishes-image-container'>
-        <img src={ImageExample} alt="imagem do prato" className='main-dishes-image' />
+        <img src={imageURL} alt="imagem do prato" className='main-dishes-image' />
       </div>
 
       <div className='main-dishes-content'>
-        <p className='label'>Nome do prato</p>
-        <p className='description'>Descrição</p>
+        <p className='label'>{name}</p>
+        <p className='description'>{description}</p>
         <div className='main-dishes-price-div'>
-          <p className='price'>Preço para um</p>
-          <p className='price'>Preço para dois</p>
+          <IoPersonSharp style={{ fill: '#00A284' }} />
+          <p className='price'>R${price}</p>
+          <IoPeopleSharp style={{ fill: '#00A284' }} />
+          <p className='price'>R${priceForTwo}</p>
         </div>
       </div>
     </div>

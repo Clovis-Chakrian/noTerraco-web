@@ -3,34 +3,80 @@ import MainDishesCard from "../components/MainDishesCard";
 import ExtraPortionCard from "../components/ExtraPortionCard";
 import PetsCard from "../components/PetsCard";
 import WineCard from "../components/WinesCard";
-
+/*
+const [menu, setMenu] = useState([]);
+async function loadMenu() {
+  await api.get('/products', {
+    params: {
+      type: productType,
+      name: ''
+    }
+  }).then(res => {
+    setMenu(res.data);
+    console.log(menu);
+  }).catch(err => {
+    console.log(err);
+    alert('Houve um erro ao buscar o cardápio. Por favor recarregue a página');
+  });
+};
+*/
 export const Appetizers = () => {
   return(
-    <DishesCard />
+    <DishesCard
+      description="asdgfsfgsgsdfadfawfrfbdfbsga"
+      imageURL="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
+      name="Teste"
+      price={39}
+      type=""
+    />
   );
 }
 
 export const Salads = () => {
   return(
-    <DishesCard/>
+    <DishesCard
+      description="asdgfsfgsgsdfadfawfrfbdfbsga"
+      imageURL="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
+      name="Teste"
+      price={39}
+      type=""
+    />
   );
 }
 
 export const MainDishes = () => {
   return(
-    <MainDishesCard />
+    <MainDishesCard
+    description="asfasfasfasfasfasfasfasfasfasf"
+    imageURL="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
+    name="Teste"
+    price={39}
+    priceForTwo={95}
+    />
   )
 }
 
 export const Drinks = () => {
   return(
-    <DishesCard />
+    <DishesCard
+      description="asdgfsfgsgsdfadfawfrfbdfbsga"
+      imageURL="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
+      name="Teste"
+      price={39}
+      type=""
+    />
   );
 }
 
 export const Desserts = () => {
   return(
-    <DishesCard />
+    <DishesCard
+      description="asdgfsfgsgsdfadfawfrfbdfbsga"
+      imageURL="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
+      name="Teste"
+      price={39}
+      type=""
+    />
   );
 }
 
@@ -46,12 +92,23 @@ export const ExtraPortion = () => {
 
 export const Pets = () => {
   return(
-    <PetsCard />
+    <PetsCard 
+    description="a~slkidhfaoshipqidf"
+    name="dfpiafspijfpoqjf"
+    price={9}
+    />
   );
 }
 
 export const Wines = () => {
   return(
-    <WineCard />
+    <WineCard
+    handleClick={() => alert()}
+      bottlePrice={54}
+      glassPrice={26}
+      imageUrl="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
+      name="Osadia"
+      availability
+    />
   );
 }

@@ -1,39 +1,43 @@
 export interface IDishes {
-  id?: String,
-  imageURL: String,
-  name: String,
-  type: String,
-  description: String,
+  id?: string,
+  imageURL: string,
+  name: string,
+  type?: string,
+  description: string,
   price: Number,
 }
 
 export interface IMainDishes {
-  id?: String,
-  imageURL: String,
-  name: String,
-  description: String,
+  id?: string,
+  imageURL: string,
+  name: string,
+  subtype?: string,
+  description: string,
   price: Number,
   priceForTwo: Number
 }
 
 export interface IExtraPortion {
-  id?: String,
-  name: String,
-  price: String,
+  id?: string,
+  name: string,
+  price: string,
 }
 
 export interface IPets {
-  id?: String,
-  name: String,
-  description: String,
-  price: String,
+  id?: string,
+  name: string,
+  description: string,
+  price: number,
 }
 
 export interface IWine {
-  id?: String,
-  country: String,
-  imageURL: String,
-  name: String,
+  id?: string,
+  country?: string,
+  imageUrl: string,
+  name: string,
   glassPrice: Number,
-  bottlePrice: Number
+  bottlePrice: Number,
+  availability: boolean,
+  show?: boolean,
+  handleClick: VoidFunction
 }
