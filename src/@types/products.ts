@@ -33,10 +33,11 @@ export interface IPets {
 export interface IWine {
   id?: string,
   country?: string,
-  imageURL: string,
+  imageUrl: string,
   name: string,
   glassPrice: Number,
   bottlePrice: Number,
   availability: boolean,
-  show?: boolean
+  show?: boolean,
+  handleClick: VoidFunction
 }

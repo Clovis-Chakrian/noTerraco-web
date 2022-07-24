@@ -103,9 +103,10 @@ export const Pets = () => {
 export const Wines = () => {
   return(
     <WineCard
+    handleClick={() => alert()}
       bottlePrice={54}
       glassPrice={26}
-      imageURL="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
+      imageUrl="https://ik.imagekit.io/noterraco/pratos/marco_pollo_2"
       name="Osadia"
       availability
     />

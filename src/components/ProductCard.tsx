@@ -10,6 +10,7 @@ interface IProductCardProps {
   priceForTwo: number,
   productType: string
   show?: boolean
+  handleClick?: VoidFunction
 }
 
 const ProductCard: React.FC<IProductCardProps> = ({
@@ -20,11 +21,12 @@ const ProductCard: React.FC<IProductCardProps> = ({
   availability,
   priceForTwo,
   productType,
-  show
+  show,
+  handleClick
 }) => {
   return (
     <div className='card' style={{ display: availability && show ? 'flex' : 'none' }}>
-      <div className="img-container">
+      <div className="img-container" onClick={handleClick}>
         <img className='img' src={imageUrl} alt={productName} />
       </div>
       <div className="product-info">
