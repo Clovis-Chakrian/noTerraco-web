@@ -346,7 +346,7 @@ function Menu() {
                       price={item.price}
                       availability={item.availability}
                     />
-                    <p className='label' style={{ color: '#3C2665', display: productType === 'Pets' ? 'flex' : 'none', width: 220, marginTop: 4 }}>{item.description}</p>
+                    <p className='label' style={{ color: '#3C2665', display: productType === 'Pets' && item.availability ? 'flex' : 'none', width: 220, marginTop: 4 }}>{item.description}</p>
                   </div>
                 </>
             )
