@@ -16,6 +16,7 @@ import {
 function Home() {
   const [productType, setProductType] = useState('Entradinhas');
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const t = '';
 
 function handleRenderProducts(product: string) {
   switch (product) {
