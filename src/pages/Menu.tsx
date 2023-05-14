@@ -211,7 +211,7 @@ function Menu() {
                         productName={'Especial do fim de semana'}
                         imageUrl={"https://ik.imagekit.io/noterraco/blackrub_2MmneovFX.jpeg?updatedAt=1684023301868"}
                         description={"Bife de chorizo ao Black Rub na manteiga de mostarda amora e mel defumada. Acompanha maionese de batata com chimichurri, e farofa de ovos com bacon. (Serve 2 pessoas)"}
-                        price={135}
+                        price={145}
                         priceForTwo={0}
                         availability={true}
                         productType={"Principais"}
