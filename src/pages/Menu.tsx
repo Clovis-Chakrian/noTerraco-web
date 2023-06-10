@@ -250,6 +250,28 @@ function Menu() {
               </div>
               : productType === 'Vinhos' ?
                 <div className="drinks-div">
+              <h4>Argentina</h4>
+                  <div className="content margin-off">
+                    {menu.map((item: IWine) => {
+                      return (
+                        <WineCard
+                          key={item.id}
+                          availability={item.availability}
+                          bottlePrice={item.bottlePrice}
+                          glassPrice={item.glassPrice}
+                          imageUrl={item.imageUrl}
+                          handleClick={() => {
+                            setIsOverlay(true);
+                            setOverlayImg(item.imageUrl)
+                          }}
+                          name={item.name}
+                          country={item.country}
+                          show={item.country === 'Argentina' ? true : false}
+                        />
+                      )
+                    })}
+                  </div>
+              
                   <h4>Chile</h4>
                   <div className="content margin-off">
                     {menu.map((item: IWine) => {
