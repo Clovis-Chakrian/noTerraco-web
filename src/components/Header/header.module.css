@@ -1,0 +1,110 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-bottom: 0.5px solid var(--secondary-color);
+  height: 75px;
+  transition: 200ms;
+  padding-right: 10px;
+}
+
+.logoImage {
+  width: 133.2;
+  height: auto;
+}
+
+.logoDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: 200ms;
+}
+
+.logoDivMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: 200ms;
+}
+
+.logoDivOpen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0px;
+  width: 100%;
+  transition: 200ms;
+}
+
+.nav {
+  display: none;
+  transition: 200ms;
+}
+
+.navOpen ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px
+}
+
+.menuButton {
+  background-color: #FFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 270ms;
+}
+
+.menuButton:active {
+  box-shadow: none;
+}
+
+.headerOpen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-bottom: 0.5px solid var(--secondary-color);
+  height: 160px;
+  transition: 500ms; 
+  padding-right: 10px;
+}
+
+.headerOpenMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-bottom: 0.5px solid var(--secondary-color);
+  height: 350px;
+  transition: 200ms;
+  padding-right: 10px;
+}
+
+.navOpen {
+  display: flex;
+  opacity: 1;
+  transition: 200ms;
+}
+
+.navOpen ul li:hover {
+  cursor: pointer;
+  border-bottom: 1px solid var(--secondary-color);
+}

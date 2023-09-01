@@ -1,0 +1,5 @@
+.extraPortionCardContainer {
+  display: flex;
+  width: 85vw;
+  justify-content: space-between;
+}

@@ -1,0 +1,42 @@
+.bgImg {
+  z-index: 0;
+}
+
+.linktreeContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linktreeHeader {
+  background-color: var(--primary-color);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 100px;
+  z-index: 1;
+}
+
+.buttonsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+.linktreeButton {
+  width: 220px;
+  height: 50px;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+}

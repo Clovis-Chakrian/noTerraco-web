@@ -1,0 +1,69 @@
+.disheCardContainer {
+  width: 90vw;
+  min-height: 180px;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+.imageContainer {
+  display: flex;
+  gap: 2px;
+}
+
+.image {
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+}
+
+.descriptionContainer {
+  padding-top: 2px;
+}
+
+.priceContainer {
+  height: 100%;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+@media (min-width: 400px) {
+  .image {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+  }
+
+  .priceContainer {
+    padding-bottom: 8px;
+  }
+}
+
+@media (min-width: 600px) {
+  .disheCardContainer {
+    width: 245px;
+    min-height: 420px;
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    flex-direction: column;
+    gap: 8px;
+    flex: 2;
+    min-height: 390px
+  }
+
+  .image {
+    width: 245px;
+    height: 245px;
+  }
+
+  .descriptionContainer {
+    padding-left: 4px;
+    width: 100%;
+  }
+}
