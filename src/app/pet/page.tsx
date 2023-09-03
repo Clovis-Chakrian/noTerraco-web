@@ -1,4 +1,4 @@
-import { Header, MenuContent, DisheCard, Footer } from '@/components';
+import { Header, DisheCard, Footer } from '@/components';
 import { IProduct } from '@/types';
 import styles from './page.module.css';
 
