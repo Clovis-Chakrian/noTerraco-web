@@ -3,7 +3,7 @@ import { IProduct } from '@/types';
 import styles from './page.module.css';
 
 export default async function Pet() {
-  const response = await fetch('http://192.168.0.49:3333/products');
+  const response = await fetch('https://noterracorestaurante.herokuapp.com/products');
   const menuPet: IProduct[] = (await response.json() as IProduct[]).filter(product => product.type === 'Pets');
 
   return (
