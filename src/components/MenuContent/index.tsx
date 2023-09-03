@@ -14,11 +14,11 @@ const MainDisheCard = dynamic(() => import('@/components').then((components) => 
 const WineCard = dynamic(() => import('@/components').then((components) => components.WineCard));
 const ExtraPortionCard = dynamic(() => import('@/components').then((components) => components.ExtraPortionCard));
 
-const socket = io('http://192.168.0.49:3333/');
+const socket = io('https://noterracorestaurante.herokuapp.com/');
 const MenuContent: React.FC<IMenuContent> = ({ dishes }) => {
   const [updatedDishes, setUpdatedDishes] = useState(dishes);
   socket.once('update', async () => {
-    const response = await fetch('http://192.168.0.49:3333/products');
+    const response = await fetch('https://noterracorestaurante.herokuapp.com/products');
     const products: IProduct[] = await response.json();
 
     setUpdatedDishes(products);
