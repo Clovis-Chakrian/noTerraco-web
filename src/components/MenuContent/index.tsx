@@ -112,7 +112,7 @@ const MenuContent: React.FC<IMenuContent> = ({ dishes }) => {
               }
             </section>
 
-            <section className={styles.menuSection}>
+            {/* <section className={styles.menuSection}>
               <header className={styles.sectionHeader}>
                 <h3 className={styles.sectionTitle}>Executivo</h3>
               </header>
@@ -132,7 +132,7 @@ const MenuContent: React.FC<IMenuContent> = ({ dishes }) => {
                   }
                 })
               }
-            </section>
+            </section> */}
 
             <section className={styles.menuSection}>
               <header className={styles.sectionHeader}>
